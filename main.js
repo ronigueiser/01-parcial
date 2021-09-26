@@ -13,7 +13,7 @@ buttom.addEventListener('click', () => {
     // main.appendChild(p);
 
     fetch(
-        `api.openweathermap.org/data/2.5/weather?q=${search.value}&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${search.value}&appid=${API_KEY}`
     ).then(function (response) {
         console.log(response);
         return response.json();
@@ -27,7 +27,3 @@ buttom.addEventListener('click', () => {
 })
 
 
-function prueba(data) {
-
-
-}
