@@ -1,14 +1,18 @@
 *{
     font-size: 2rem;
+    font-family: roboto, serif;
 }
 
 #body{
+    background-color: lightblue;
 }
+
+
 
 .titulo{
     font-size: 3.4rem;
     padding-top: 30px;
-    font-family: cursive;
+    font-family: 'Architects Daughter', cursive;
 }
 
 .contenedor_titulo{
@@ -21,23 +25,28 @@
     width: 90%;
 }
 
-h2{
-    font-family: roboto, serif;
-}
+/*h2{*/
+/*    font-family: roboto, serif;*/
+/*}*/
 
 label{
     font-size: 1.6rem;
 }
 
 .consulta{
-    width: 90%;
+    width: 80%;
     margin: auto;
-    padding-top: 5px;
+    border-radius: 65px;
+    background-color: azure;
+    padding: 45px;
 }
 
 input{
     font-size: 1.7rem;
     margin-top: 60px;
+    background-color: lightcyan;
+    border: solid 2px black;
+    border-radius: 20px;
 }
 button{
     margin-top: 35px;
@@ -60,11 +69,13 @@ button{
 #main h3{
     font-size: 2.4rem;
     text-align: center;
-    font-family: cursive;
+    font-family: 'Architects Daughter', cursive;
+    margin-bottom: 1px;
 }
 
 ul{
     list-style: none;
+    margin-top: 25px;
 }
 
 li{
