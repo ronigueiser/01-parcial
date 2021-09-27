@@ -5,6 +5,8 @@ let search = document.getElementById('search');
 let main = document.querySelector('#main');
 let buttom = document.getElementById('send');
 let d = document;
+let estadoCielo = d.getElementById('estadoCielo');
+let secondary = d.getElementById('secondary');
 
 
 buttom.addEventListener('click', () => {
@@ -37,14 +39,23 @@ function drawMaker(data){
 
     let pWeather = d.createElement('p');
     let imgWeather = d.createElement('img');
-
+    let imgEstado = d.createElement('img');
+    let estado;
     for (let cielo of data.weather){
         pWeather.innerHTML = `Estado del cielo: ${cielo.description.charAt(0).toUpperCase()}${cielo.description.slice(1)}`;
-        main.appendChild(pWeather);
+        estadoCielo.appendChild(pWeather);
 
         imgWeather.src = `http://openweathermap.org/img/wn/${cielo.icon}@2x.png`;
         imgWeather.alt = cielo.main;
-        main.appendChild(imgWeather);
+
+        estadoCielo.appendChild(imgWeather);
+
+
+            imgEstado.src = 'img/Soleado.jpg';
+            imgEstado.alt = `Imagen del estado del cielo: ${cielo.main}`;
+            imgEstado.classList = 'imagen';
+            secondary.appendChild(imgEstado);
+
 
     }
 
@@ -63,7 +74,7 @@ function drawMaker(data){
         liST.innerHTML = `Sensación Térmica: ${data.main.feels_like}°`;
         liHumedad.innerHTML = `Humedad: ${data.main.humidity}%`;
         liPresion.innerHTML = `Presión: ${data.main.pressure} Hectopascales`;
-        liTemperatura.innerHTML = `Temperatura Actual${data.main.temp}°`;
+        liTemperatura.innerHTML = `Temperatura Actual: ${data.main.temp}°`;
         liTempMax.innerHTML = `Temperatura Máxima: ${data.main.temp_max}°`;
         liTempMin.innerHTML = `Temperatura Mínima: ${data.main.temp_min}°`;
 
@@ -75,11 +86,6 @@ function drawMaker(data){
         ulTemperatura.appendChild(liTempMin);
 
 
-
-
-
-    //Mostrar: temperatura máxima, temperatura mínima, humedad, sensación térmica,
-    // presión atmosférica y velocidad de viento.
 
 
 

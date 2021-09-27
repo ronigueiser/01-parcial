@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Roni Gueiser, PWA</title>
@@ -9,29 +9,34 @@
 </head>
 <body>
 
+<div class="contenedor">
+    <header>
+            <div>
+                <h1>Consulta el estado del clima en Roni Noticias</h1>
+            </div>
+    </header>
 
-<header>
-        <div>
-            <h1>Consulta el estado del clima en Roni Noticias</h1>
+    <section>
+
+        <h2>Consultor de clima</h2>
+
+        <form>
+            <label>Escriba el nombre de una ciudad:</label>
+            <input title="Search" id="search" value="" type="text" required>
+
+            <button id="send" type="button">Enviar</button>
+        </form>
+
+    </section>
+
+    <div class="info">
+        <div id="main">
+
+            <div id="estadoCielo"></div>
+
         </div>
-</header>
-
-<section>
-
-    <h2>Consultor de clima</h2>
-
-    <form>
-        <label>Escriba el nombre de una ciudad:</label>
-        <input title="Search" id="search" value="" type="text" required>
-
-        <button id="send" type="button">Enviar</button>
-    </form>
-
-</section>
-
-<div id="main">
-
-
+        <div id="secondary"></div>
+    </div>
 
 
 
