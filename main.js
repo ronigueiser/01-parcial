@@ -1,10 +1,11 @@
 const API_KEY = '5c3250ce85bfda68a2dcd05b8cc69fb7';
 const lang = 'es';
 
-let search = document.getElementById('search');
-let main = document.querySelector('#main');
-let buttom = document.getElementById('send');
 let d = document;
+let body = d.getElementById('body')
+let search = d.getElementById('search');
+let main = d.querySelector('#main');
+let buttom = d.getElementById('send');
 let estadoCielo = d.getElementById('estadoCielo');
 let secondary = d.getElementById('secondary');
 
@@ -31,30 +32,73 @@ buttom.addEventListener('click', () => {
 
 function drawMaker(data){
 
-    console.log(data)
-    let pCiudad = d.createElement('p');
-    pCiudad.innerHTML = `Nombre de la ciudad: ${data.name}`
-    main.appendChild(pCiudad);
+    main.innerHTML = "";
+    secondary.innerHTML = "";
+
+    //console.log(data)
 
 
-    let pWeather = d.createElement('p');
+
+    let h3Weather = d.createElement('h3');
     let imgWeather = d.createElement('img');
     let imgEstado = d.createElement('img');
-    let estado;
+
+    h3Weather.innerHTML = data.name;
+    h3Weather.classList = 'encabezado'
+    main.appendChild(h3Weather);
+
     for (let cielo of data.weather){
-        pWeather.innerHTML = `Estado del cielo: ${cielo.description.charAt(0).toUpperCase()}${cielo.description.slice(1)}`;
-        estadoCielo.appendChild(pWeather);
+
+
 
         imgWeather.src = `http://openweathermap.org/img/wn/${cielo.icon}@2x.png`;
         imgWeather.alt = cielo.main;
-
         estadoCielo.appendChild(imgWeather);
 
-
+        if(cielo.id === 800){
             imgEstado.src = 'img/Soleado.jpg';
             imgEstado.alt = `Imagen del estado del cielo: ${cielo.main}`;
             imgEstado.classList = 'imagen';
             secondary.appendChild(imgEstado);
+            body.style.background = 'lightblue';
+        } else if(cielo.id >= 801){
+            imgEstado.src = 'img/Nublado.jpg';
+            imgEstado.alt = `Imagen del estado del cielo: ${cielo.main}`;
+            imgEstado.classList = 'imagen';
+            secondary.appendChild(imgEstado);
+            body.style.background = 'lightgray';
+        } else if (cielo.id > 700 && cielo.id < 782){
+            imgEstado.src = 'img/Arena.jpg';
+            imgEstado.alt = `Imagen del estado del cielo: ${cielo.main}`;
+            imgEstado.classList = 'imagen';
+            secondary.appendChild(imgEstado);
+            body.style.background = 'lightgoldenRodYellow';
+        }else if (cielo.id >= 600 && cielo.id < 623){
+            imgEstado.src = 'img/Nieve.jpg';
+            imgEstado.alt = `Imagen del estado del cielo: ${cielo.main}`;
+            imgEstado.classList = 'imagen';
+            secondary.appendChild(imgEstado);
+            body.style.background = 'mintcream';
+        }else if (cielo.id >= 500 && cielo.id < 532){
+            imgEstado.src = 'img/Lluvia.jpg';
+            imgEstado.alt = `Imagen del estado del cielo: ${cielo.main}`;
+            imgEstado.classList = 'imagen';
+            secondary.appendChild(imgEstado);
+            body.style.background = 'lightsteelblue';
+        }else if (cielo.id >= 300 && cielo.id < 322){
+            imgEstado.src = 'img/Lluvioso.jpg';
+            imgEstado.alt = `Imagen del estado del cielo: ${cielo.main}`;
+            imgEstado.classList = 'imagen';
+            secondary.appendChild(imgEstado);
+            body.style.background = 'lightblue';
+        }else if (cielo.id >= 200 && cielo.id < 233){
+            imgEstado.src = 'img/Tormenta.jpg';
+            imgEstado.alt = `Imagen del estado del cielo: ${cielo.main}`;
+            imgEstado.classList = 'imagen';
+            secondary.appendChild(imgEstado);
+            body.style.background = 'mediumblue';
+        }
+
 
 
     }
