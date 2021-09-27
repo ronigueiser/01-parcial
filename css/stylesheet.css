@@ -20,6 +20,8 @@ h1{
     background: rgba(255,255,255, 0.9);
     padding: 45px;
     border-radius: 25px;
+    max-width: 800px;
+    margin: auto;
 
 }
 
@@ -65,5 +67,30 @@ li{
 @media screen and (max-width: 920px){
     .info{
         flex-direction: column;
+
+    }
+    #main{
+        width: 100%;
+    }
+}
+
+input{
+    max-width: 120px;
+    height: 25px;
+    font-size: 1rem;
+}
+
+button{
+    width: 60px;
+    height: 30px;
+    border: solid 2px lightgrey;
+    border-radius: 10px;
+    background: lightgreen;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 523px){
+    input{
+        margin-top: 15px;
     }
 }
