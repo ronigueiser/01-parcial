@@ -6,7 +6,7 @@ let body = d.getElementById('body')
 let search = d.getElementById('search');
 let main = d.querySelector('#main');
 let buttom = d.getElementById('send');
-let estadoCielo = d.getElementById('estadoCielo');
+//let estadoCielo = d.getElementById('estadoCielo');
 let secondary = d.getElementById('secondary');
 
 
@@ -35,12 +35,12 @@ function drawMaker(data){
     main.innerHTML = "";
     secondary.innerHTML = "";
 
-    //console.log(data)
+    console.log(data.weather.main)
 
 
 
     let h3Weather = d.createElement('h3');
-    let imgWeather = d.createElement('img');
+    //let imgWeather = d.createElement('p');
     let imgEstado = d.createElement('img');
 
     h3Weather.innerHTML = data.name;
@@ -50,10 +50,11 @@ function drawMaker(data){
     for (let cielo of data.weather){
 
 
+        function estadoCielo(){
+            return cielo.description
+        }
 
-        imgWeather.src = `http://openweathermap.org/img/wn/${cielo.icon}@2x.png`;
-        imgWeather.alt = cielo.main;
-        estadoCielo.appendChild(imgWeather);
+
 
         if(cielo.id === 800){
             imgEstado.src = 'img/Soleado.jpg';
@@ -103,6 +104,8 @@ function drawMaker(data){
 
     }
 
+
+
     let ulTemperatura = d.createElement('ul');
     main.appendChild(ulTemperatura);
     let liST = d.createElement('li');
@@ -111,10 +114,11 @@ function drawMaker(data){
     let liTemperatura = d.createElement('li');
     let liTempMax= d.createElement('li');
     let liTempMin = d.createElement('li');
+    let liEstadoCielo = d.createElement('li');
 
     console.log(data.main.humidity)
 
-
+        liEstadoCielo.innerHTML = `Estado del cielo: ${estadoCielo()}`
         liST.innerHTML = `Sensación Térmica: ${data.main.feels_like}°`;
         liHumedad.innerHTML = `Humedad: ${data.main.humidity}%`;
         liPresion.innerHTML = `Presión: ${data.main.pressure} Hectopascales`;
@@ -122,6 +126,7 @@ function drawMaker(data){
         liTempMax.innerHTML = `Temperatura Máxima: ${data.main.temp_max}°`;
         liTempMin.innerHTML = `Temperatura Mínima: ${data.main.temp_min}°`;
 
+        ulTemperatura.appendChild(liEstadoCielo);
         ulTemperatura.appendChild(liST);
         ulTemperatura.appendChild(liHumedad);
         ulTemperatura.appendChild(liPresion);

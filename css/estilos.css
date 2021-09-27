@@ -1,0 +1,78 @@
+*{
+    font-size: 2rem;
+}
+
+#body{
+}
+
+.titulo{
+    font-size: 3.4rem;
+    padding-top: 30px;
+    font-family: cursive;
+}
+
+.contenedor_titulo{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.header{
+    margin: auto;
+    width: 90%;
+}
+
+h2{
+    font-family: roboto, serif;
+}
+
+label{
+    font-size: 1.6rem;
+}
+
+.consulta{
+    width: 90%;
+    margin: auto;
+    padding-top: 5px;
+}
+
+input{
+    font-size: 1.7rem;
+    margin-top: 60px;
+}
+button{
+    margin-top: 35px;
+    padding: 12px;
+    font-size: 1.8rem;
+    border: solid 2px black;
+    border-radius: 30px;
+}
+
+#main{
+    width: 80%;
+    margin: auto;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#main h3{
+    font-size: 2.4rem;
+    text-align: center;
+    font-family: cursive;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    padding-top: 15px;
+    font-size: 1.6rem;
+}
+
+img{
+    max-width: 706px;
+    max-height: 398px;
+}

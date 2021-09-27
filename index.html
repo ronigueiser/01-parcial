@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Roni Gueiser, PWA</title>
-    <link type="text/css" href="css/stylesheet.css" rel="stylesheet"/>
+<!--    <link type="text/css" href="css/stylesheet.css" rel="stylesheet"/>-->
+    <link type="text/css" href="css/estilos.css" rel="stylesheet"/>
     <link  href="img/cloudy.png" rel="icon"/>
-
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
 </head>
 <body id="body">
 
 <div class="contenedor">
-    <header>
-            <div>
-                <h1>Consulta el estado del clima en Roni Noticias</h1>
+    <header class="header">
+            <div class="contenedor_titulo">
+                <h1 class="titulo">Roni Noticias</h1>
             </div>
     </header>
 
-    <section>
+    <section class="consulta">
 
         <h2>Consultor de clima</h2>
 
@@ -26,6 +29,7 @@
             <input title="Search" id="search" value="" type="text" required>
 
             <button id="send" type="button">Enviar</button>
+
         </form>
 
     </section>
@@ -42,7 +46,6 @@
 
 
 </div>
-
 
 
 <script src="main.js"></script>
