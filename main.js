@@ -8,7 +8,11 @@ let main = d.querySelector('#main');
 let buttom = d.getElementById('send');
 //let estadoCielo = d.getElementById('estadoCielo');
 let secondary = d.getElementById('secondary');
+const valorUltimaBusqueda = JSON.parse(localStorage.getItem('Respuesta API'));
 
+if (valorUltimaBusqueda != null){
+    drawMaker(valorUltimaBusqueda);
+}
 
 buttom.addEventListener('click', () => {
 
@@ -24,11 +28,22 @@ buttom.addEventListener('click', () => {
     }).then(function (responseJSON){
         console.log('imprimo json', responseJSON);
         drawMaker(responseJSON);
+        saveLocalStorage(responseJSON);
     }).catch(function (error){
         console.log('Fallo!',error)
     });
 
+
+
+
 })
+
+function saveLocalStorage (data){
+    localStorage.setItem('Respuesta API', JSON.stringify(data));
+}
+
+
+
 
 function drawMaker(data){
 
