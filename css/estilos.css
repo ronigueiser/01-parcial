@@ -85,6 +85,7 @@ li{
 
 img{
     width: 100%;
+    max-width: 706px;
 }
 
 @media screen and (min-width: 2070px) {
@@ -100,6 +101,9 @@ img{
 
     #main h3{
         text-align: initial;
+    }
+    img{
+        max-width: initial;
     }
 
     #secondary{
