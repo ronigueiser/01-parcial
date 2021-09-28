@@ -47,6 +47,7 @@ input{
     background-color: lightcyan;
     border: solid 2px black;
     border-radius: 20px;
+    max-width: 100%;
 }
 button{
     margin-top: 35px;
@@ -57,8 +58,7 @@ button{
 }
 
 #main{
-    width: 80%;
-    margin: auto;
+
 }
 
 .info{
@@ -84,6 +84,27 @@ li{
 }
 
 img{
-    max-width: 706px;
-    max-height: 398px;
+    width: 100%;
+}
+
+@media screen and (min-width: 2070px) {
+    .info{
+        flex-direction: initial;
+        padding: 60px;
+        margin: auto;
+        width: 75%;
+    }
+    #main{
+        width: 50%;
+    }
+
+    #main h3{
+        text-align: initial;
+    }
+
+    #secondary{
+        width: 50%;
+        display: flex;
+        flex-direction: row-reverse;
+    }
 }
