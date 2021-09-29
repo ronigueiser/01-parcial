@@ -28,7 +28,10 @@ buttom.addEventListener('click', () => {
     }).then(function (responseJSON){
         console.log('imprimo json', responseJSON);
         drawMaker(responseJSON);
+        const videoID = getVideoID(responseJSON);
+        creatYouTubePlayer(videoID);
         saveLocalStorage(responseJSON);
+
     }).catch(function (error){
         console.log('Fallo!',error)
     });
@@ -42,6 +45,30 @@ function saveLocalStorage (data){
     localStorage.setItem('Respuesta API', JSON.stringify(data));
 }
 
+function getVideoID(data){
+
+    console.log(data)
+
+    for (let cielo of data.weather) {
+        if (cielo.id === 800) {
+            return 'aBYAByd38m0';
+        } else if (cielo.id >= 801) {
+            return 'bE_xx8ZMMrY';
+        } else if (cielo.id > 700 && cielo.id < 782) {
+            return 'mowe__qcPm0';
+        } else if (cielo.id >= 600 && cielo.id < 623) {
+            return 'Kz1wHw16GyA';
+        } else if (cielo.id >= 500 && cielo.id < 532) {
+            return 'mPZkdNFkNps'
+        } else if (cielo.id >= 300 && cielo.id < 322) {
+            return 'WbsTWZtktqs';
+        } else if (cielo.id >= 200 && cielo.id < 233) {
+            return 'PV97yyeHB';
+        }
+    }
+}
+
+
 
 
 
@@ -50,7 +77,7 @@ function drawMaker(data){
     main.innerHTML = "";
     secondary.innerHTML = "";
 
-    console.log(data.weather.main)
+    //console.log(data.weather.main)
 
 
 
@@ -88,7 +115,7 @@ function drawMaker(data){
             imgEstado.alt = `Imagen del estado del cielo: ${cielo.main}`;
             imgEstado.classList = 'imagen';
             secondary.appendChild(imgEstado);
-            body.style.background = 'lightgoldenRodYellow';
+            body.style.background = 'lightslategray';
         }else if (cielo.id >= 600 && cielo.id < 623){
             imgEstado.src = 'img/Nieve.jpg';
             imgEstado.alt = `Imagen del estado del cielo: ${cielo.main}`;
@@ -114,7 +141,6 @@ function drawMaker(data){
             secondary.appendChild(imgEstado);
             body.style.background = 'mediumblue';
         }
-
 
 
     }
