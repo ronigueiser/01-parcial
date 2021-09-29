@@ -1,6 +1,8 @@
 *{
     font-size: 2rem;
     font-family: roboto, serif;
+    margin: 0;
+    padding: 0;
 }
 
 #body{
@@ -88,7 +90,7 @@ img{
     max-width: 706px;
 }
 
-@media screen and (min-width: 2070px) {
+@media screen and (min-width: 1600px) {
     .info{
         flex-direction: initial;
         padding: 60px;
@@ -103,6 +105,7 @@ img{
         text-align: initial;
     }
     img{
+        padding-top: 160px;
         max-width: initial;
     }
 
@@ -110,5 +113,10 @@ img{
         width: 50%;
         display: flex;
         flex-direction: row-reverse;
+    }
+
+    li {
+
+        font-size: 1.3rem;
     }
 }
