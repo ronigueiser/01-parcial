@@ -170,10 +170,10 @@ function drawMaker(data){
         liViento.innerHTML = `Viento: ${data.wind.speed}Km/h`;
 
         ulTemperatura.appendChild(liEstadoCielo);
-        ulTemperatura.appendChild(liST);
+        ulTemperatura.appendChild(liTemperatura);
         ulTemperatura.appendChild(liHumedad);
         ulTemperatura.appendChild(liPresion);
-        ulTemperatura.appendChild(liTemperatura);
+        ulTemperatura.appendChild(liST);
         ulTemperatura.appendChild(liTempMax);
         ulTemperatura.appendChild(liTempMin);
         ulTemperatura.appendChild(liViento);
