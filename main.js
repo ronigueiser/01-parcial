@@ -156,8 +156,9 @@ function drawMaker(data){
     let liTempMax= d.createElement('li');
     let liTempMin = d.createElement('li');
     let liEstadoCielo = d.createElement('li');
+    let liViento = d.createElement('li');
 
-    console.log(data.main.humidity)
+    console.log(data.wind.speed)
 
         liEstadoCielo.innerHTML = `Estado del cielo: ${estadoCielo()}`
         liST.innerHTML = `Sensación Térmica: ${data.main.feels_like}°`;
@@ -166,6 +167,7 @@ function drawMaker(data){
         liTemperatura.innerHTML = `Temperatura Actual: ${data.main.temp}°`;
         liTempMax.innerHTML = `Temperatura Máxima: ${data.main.temp_max}°`;
         liTempMin.innerHTML = `Temperatura Mínima: ${data.main.temp_min}°`;
+        liViento.innerHTML = `Viento: ${data.wind.speed}Km/h`;
 
         ulTemperatura.appendChild(liEstadoCielo);
         ulTemperatura.appendChild(liST);
@@ -174,6 +176,7 @@ function drawMaker(data){
         ulTemperatura.appendChild(liTemperatura);
         ulTemperatura.appendChild(liTempMax);
         ulTemperatura.appendChild(liTempMin);
+        ulTemperatura.appendChild(liViento);
 
 
 
