@@ -104,8 +104,6 @@ function drawMaker(data){
 
 
 
-
-
         if(cielo.id === 800){
             imgEstado.src = 'img/Soleado.jpg';
             imgEstado.alt = `Imagen del estado del cielo: ${cielo.main}`;
@@ -169,12 +167,12 @@ function drawMaker(data){
     console.log(data.wind.speed)
 
         liEstadoCielo.innerHTML = `Estado del cielo: ${estadoCielo()}`
-        liST.innerHTML = `Sensación Térmica: ${data.main.feels_like}°`;
+        liST.innerHTML = `Sensación Térmica: ${data.main.feels_like}°C`;
         liHumedad.innerHTML = `Humedad: ${data.main.humidity}%`;
         liPresion.innerHTML = `Presión: ${data.main.pressure} Hectopascales`;
         //liTemperatura.innerHTML = `Temperatura Actual: ${data.main.temp}°`;
-        liTempMax.innerHTML = `Temperatura Máxima: ${data.main.temp_max}°`;
-        liTempMin.innerHTML = `Temperatura Mínima: ${data.main.temp_min}°`;
+        liTempMax.innerHTML = `Temperatura Máxima: ${data.main.temp_max}°C`;
+        liTempMin.innerHTML = `Temperatura Mínima: ${data.main.temp_min}°C`;
         liViento.innerHTML = `Viento: ${data.wind.speed}Km/h`;
 
         ulTemperatura.appendChild(liEstadoCielo);
