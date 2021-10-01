@@ -87,10 +87,13 @@ function drawMaker(data){
     let h3Weather = d.createElement('h3');
     //let imgWeather = d.createElement('p');
     let imgEstado = d.createElement('img');
-
+    let pTemperatura = d.createElement('p');
     h3Weather.innerHTML = data.name;
     h3Weather.classList = 'encabezado'
     main.appendChild(h3Weather);
+
+    pTemperatura.innerHTML = `Temperatura: ${data.main.temp}°C`;
+    main.appendChild(pTemperatura);
 
     for (let cielo of data.weather){
 
@@ -98,6 +101,8 @@ function drawMaker(data){
         function estadoCielo(){
             return cielo.description
         }
+
+
 
 
 
@@ -155,7 +160,7 @@ function drawMaker(data){
     let liST = d.createElement('li');
     let liHumedad = d.createElement('li');
     let liPresion = d.createElement('li');
-    let liTemperatura = d.createElement('li');
+    //let liTemperatura = d.createElement('li');
     let liTempMax= d.createElement('li');
     let liTempMin = d.createElement('li');
     let liEstadoCielo = d.createElement('li');
@@ -167,13 +172,13 @@ function drawMaker(data){
         liST.innerHTML = `Sensación Térmica: ${data.main.feels_like}°`;
         liHumedad.innerHTML = `Humedad: ${data.main.humidity}%`;
         liPresion.innerHTML = `Presión: ${data.main.pressure} Hectopascales`;
-        liTemperatura.innerHTML = `Temperatura Actual: ${data.main.temp}°`;
+        //liTemperatura.innerHTML = `Temperatura Actual: ${data.main.temp}°`;
         liTempMax.innerHTML = `Temperatura Máxima: ${data.main.temp_max}°`;
         liTempMin.innerHTML = `Temperatura Mínima: ${data.main.temp_min}°`;
         liViento.innerHTML = `Viento: ${data.wind.speed}Km/h`;
 
         ulTemperatura.appendChild(liEstadoCielo);
-        ulTemperatura.appendChild(liTemperatura);
+        //ulTemperatura.appendChild(liTemperatura);
         ulTemperatura.appendChild(liHumedad);
         ulTemperatura.appendChild(liPresion);
         ulTemperatura.appendChild(liST);
